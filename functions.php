@@ -26,21 +26,21 @@ function cmsclass_widgets_init(){
         'name'          => __('Footer Widget Area Two', 'cmsclass'),
         'id'            => 'footer-widget-area-two',
         'description'   => __('The second footer widget area', 'cmsclass'),
-        'before_widget' => '<div class="about-widget">',
+        'before_widget' => '<div class="copyright-widget">',
         'after_widget'  => '</div>',
         'before_title'   => '<h4 class="widget-title">',
         'after_title'   => '</h4>',
     ));
-    // menu
-    register_sidebar(array(
-        'name'          => __('Footer Widget Area Three', 'cmsclass'),
-        'id'            => 'footer-widget-area-three',
-        'description'   => __('The third footer widget area', 'cmsclass'),
-        'before_widget' => '<div class="menu-widget">',
-        'after_widget'  => '</div>',
-        'befor_title'   => '<h4 class="widget-title">',
-        'after_title'   => '</h4>',
-    ));
+    // // menu
+    // register_sidebar(array(
+    //     'name'          => __('Footer Widget Area Three', 'cmsclass'),
+    //     'id'            => 'footer-widget-area-three',
+    //     'description'   => __('The third footer widget area', 'cmsclass'),
+    //     'before_widget' => '<div class="menu-widget">',
+    //     'after_widget'  => '</div>',
+    //     'befor_title'   => '<h4 class="widget-title">',
+    //     'after_title'   => '</h4>',
+    // ));
     // contact information
     register_sidebar(array(
         'name'          => __('Footer Widget Area Four', 'cmsclass'),
@@ -108,3 +108,4 @@ function retro_game_shortcodes(){
 }
 // register shortcode
 add_shortcode('retroGames', 'retro_game_shortcode');
+?>

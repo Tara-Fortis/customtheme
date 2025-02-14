@@ -1,21 +1,23 @@
         <footer>    
             <!-- add widgets here -->
-            <section class="top-footer">
-                    <div class="first-widget-area">
+             <div class="fluid-container">
+                <section class="row">
+                    <div class="col">
                         <a href="<php echo esc_url(home_url()); ?>">
                             <?php dynamic_sidebar('footer-widget-area-one'); ?>
                         </a>
                     </div><!-- .first .widget-area logo that redirects to the homepage-->
-                    <div class="second-widget-area">
+                    <div class="col">
                             <?php dynamic_sidebar('footer-widget-area-two'); ?>
-                    </div><!-- .second .widget-area -->
-                    <div class="third-widget-area">
+                    </div><!-- copyright -->
+                    <!-- <div class="col">
                             <?php dynamic_sidebar('footer-widget-area-three'); ?>
-                        </div><!-- .third .widget-area -->
-                    <div class="fourth-widget-area">
+                        </div>menu -->
+                    <div class="col">
                             <?php dynamic_sidebar('footer-widget-area-four'); ?>
                         </div><!-- .fourth .widget-area -->
-               </section>
+                </section>
+            </div>
         </footer>
     </body>
 </html>
