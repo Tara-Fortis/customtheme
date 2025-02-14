@@ -25,7 +25,7 @@ get_header();
             </div>
         </section>
         <section class="custom-plugin-section row">
-            <?php echo do_shortcode('[retroGames]'); ?>
+            <?php echo do_shortcode('[learningLog]'); ?>
         </section>
     </div>
 </main>

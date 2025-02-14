@@ -31,17 +31,6 @@ function cmsclass_widgets_init(){
         'before_title'   => '<h4 class="widget-title">',
         'after_title'   => '</h4>',
     ));
-    // // menu
-    // register_sidebar(array(
-    //     'name'          => __('Footer Widget Area Three', 'cmsclass'),
-    //     'id'            => 'footer-widget-area-three',
-    //     'description'   => __('The third footer widget area', 'cmsclass'),
-    //     'before_widget' => '<div class="menu-widget">',
-    //     'after_widget'  => '</div>',
-    //     'befor_title'   => '<h4 class="widget-title">',
-    //     'after_title'   => '</h4>',
-    // ));
-    // contact information
     register_sidebar(array(
         'name'          => __('Footer Widget Area Four', 'cmsclass'),
         'id'            => 'footer-widget-area-four',
@@ -51,61 +40,57 @@ function cmsclass_widgets_init(){
         'before_title'   => '<h4 class="widget-title">',
         'after_title'   => '</h4>',
     ));
+    add_theme_support( 'widgets' );
 }
-add_action( 'widgets_init', 'cmsclass_widgets_init' );
-//Custom Plugin
-function retro_game_init(){
-    // $args in an array called Retro Games
+add_action( 'init','cmsclass_widgets_init');
+// Custom plugin "Learning Log"
+function learning_log(){
     $args = array(
-        'label'             => 'Retro Games',
+        'label'             => 'Learning Log',
         'public'            => true,
         'show_ui'           => true,
         'capability_type'   => 'post',
-        'taxonomies'        => array( 'category' ),
+        'taxonomies'        => array ( 'category' ),
         'hierarchial'       => false,
-        'query_var'         => true,
-        'menu_icon'         => 'dashicons-album',
+        'menu_icon'         => 'dashicons-book',
         'supports'          => array(
             'title',
             'editor',
             'excerpts',
-            'trackbacks',
-            'comments',
             'thumbnail',
             'author',
             'post-formats',
             'page-attributes',
         )
     );
-    // registered the post type
-    register_post_type('retroGames', $args);
+    register_post_type('learning_log', $args);
 }
-add_action('init', 'retro_game_init'); // reference to the function name
-// Create our custom shortcode for our custom plugin
-function retro_game_shortcodes(){
-    $query = new WP_Query(array('post_type' => 'retroGames', 'post_per_page' => 8, 'order => 
+add_action('init', 'learning_log');
+?>
+<?php
+// Custom shortcode for "Learning Log"
+function learning_log_shortcode(){
+    $query = new WP_Query(array('post_type' => 'learningLog', 'post_per_page' => 2, 'order => 
     asc'));
     while ($query -> have_posts()) : $query-> the_post();
-    // sql statement post_per_page this is how many pages are shown before pagination occurs
-    ?>
-    <div class="retro-game-container col-sm-12 col-md-6 col-lg-3">
-        <div>
-            <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
-        </div>
-        <!-- link that contains the first thumbnail (featured image)-->
-        <div>
-            <h4><?php the_title(); ?></h4>
-            <?php the_content(); ?>
-            <p><a href="<?php the_permalink(); ?>">Learn More</a></p>
-        </div>
-        <!-- learn more button -->
+?>
+<div>
+    <div>
+        <p><a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a></p>
     </div>
-    <?php wp_reset_postdata(); ?>
-    <!-- another WordPress php hook -->
-    <?php
-    endwhile;
-    wp_reset_postdata();
+    <div>
+        <h1><?php the_title(); ?></h1>
+        <section><?php echo get_the_content(); ?></section>
+        <p><a href="<?php the_permalink(); ?>">Learn More</a></p>
+    </div>
+</div>
+</div>
+<?php wp_reset_postdata(); ?>
+<!-- another WordPress php hook -->
+<?php
+endwhile;
+wp_reset_postdata();
 }
-// register shortcode
-add_shortcode('retroGames', 'retro_game_shortcode');
+// register shortcodex
+add_shortcode('learningLog', 'learning_log_shortcode');
 ?>
