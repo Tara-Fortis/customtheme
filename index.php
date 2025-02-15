@@ -21,7 +21,7 @@ $featuredImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'fu
 <section class="homepage-content">
     <?php echo get_the_content(); ?> <!-- the body of the page's content-->
 </section>
-
+<div class="spacer"></div>
 <?php 
 get_footer();
 ?>

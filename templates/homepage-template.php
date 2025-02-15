@@ -28,6 +28,7 @@ get_header();
             <?php echo do_shortcode('[retroGames]'); ?>
         </section> -->
     </div>
+    <div class="spacer"></div>
 </main>
 <?php
 get_footer();
