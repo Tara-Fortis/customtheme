@@ -18,15 +18,15 @@ get_header();
                 <h2><?php echo wp_kses_post(get_field('row_one_title')); ?></h2>
                 <p><?php echo wp_kses_post(get_field('row_one_text')); ?></p>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12">
+            <!-- <div class="col-sm-12 col-md-12 col-lg-12">
                 <h2><?php echo wp_kses_post(get_field('row_two_title')); ?></h2>
                 <p><?php echo wp_kses_post(get_field('row_two_text')); ?></p>
                 <img src="<?php echo wp_kses_post(get_field('row_two_image')); ?>" class="widget-image">
             </div>
         </section>
         <section class="custom-plugin-section row">
-            <?php echo do_shortcode('[learningLog]'); ?>
-        </section>
+            <?php echo do_shortcode('[retroGames]'); ?>
+        </section> -->
     </div>
 </main>
 <?php

@@ -1,4 +1,4 @@
-        <footer>    
+<footer>    
             <!-- add widgets here -->
              <div class="fluid-container">
                 <section class="row">
