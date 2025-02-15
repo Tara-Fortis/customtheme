@@ -9,10 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
 </head>
 <body <?php body_class();?> >
-<header class="fluid-container">
+<header>
     <div>
         <a href=" <?php echo esc_url(home_url()); ?>"><!-- link to homepage -->
-            <img src="<?php echo  esc_url(home_url('wp-content/uploads/2025/02/logo.jpg'));?>" alt="header logo">
+            <img src="<?php echo  esc_url(home_url('wp-content/uploads/2025/02/logo.svg'));?>" alt="header logo">
         </a> <!-- image link -->
     </div>
     <nav>
@@ -21,7 +21,7 @@
             'menu'            => 'main', //menu name
             'theme_location'  => '',
             'depth'           => 2, // number of layers (doesn't have to be 2)
-            'fallback_cb'     => false,
+            'fallback_cb'     => false, 
         ));
         ?>
     </nav>
